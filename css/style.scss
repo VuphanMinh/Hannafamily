@@ -886,33 +886,50 @@ body {
             color: $grey;
         }
 
-        .location-course__location {
+        .location-course__item {
+            height: 200px;
             display: flex;
-            align-items: top;
-            margin-bottom: 20px;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-bottom: 40px;
 
-            .location--bold {
-                font-family: 'Helvetica medium';
-                font-size: 16px;
-                line-height: 18px;
-                font-weight: 400;
-                color: $orange;
-                margin-right: 10px;
+            @include res_for(sp) {  
+                margin-bottom: 20px;
+            }
 
-                @include res_for(sp) {  
-                    font-size: 14px;
+            .location-course__item--icon {
+                height: 40px;
+                height: auto;
+                margin: auto;
+
+                img {
+                    width: 100%;
                 }
             }
 
-            .location--text {
-                font-family: 'Helvetica regular';
-                font-size: 16px;
-                line-height: 28px;
-                font-weight: 400;
-                color: $grey;
+            .location-course__item--content {
+                & > .content__title {
+                    font-family: 'Helvetica medium';
+                    font-size: 24px;
+                    line-height: 36px;
+                    font-weight: 400;
+                    color: $orange;
+                    text-align: center;
+                }
 
-                @include res_for(sp) {  
-                    font-size: 14px;
+                & > .content__subtitle {
+                    height: 80px;
+                    font-family: 'Helvetica medium';
+                    font-size: 18px;
+                    line-height: 28px;
+                    font-weight: 400;
+                    color: $grey;
+                    text-align: center;
+
+                    span {
+                        white-space: nowrap;
+                    }
                 }
             }
         }

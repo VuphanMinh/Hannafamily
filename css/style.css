@@ -793,35 +793,46 @@ body {
   font-weight: 400;
   color: #333333;
 }
-.location-course .location-course__content-wrap .location-course__location {
+.location-course .location-course__content-wrap .location-course__item {
+  height: 200px;
   display: flex;
-  align-items: top;
-  margin-bottom: 20px;
-}
-.location-course .location-course__content-wrap .location-course__location .location--bold {
-  font-family: "Helvetica medium";
-  font-size: 16px;
-  line-height: 18px;
-  font-weight: 400;
-  color: #f88008;
-  margin-right: 10px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 40px;
 }
 @media screen and (min-width: 310px) and (max-width: 768px) {
-  .location-course .location-course__content-wrap .location-course__location .location--bold {
-    font-size: 14px;
+  .location-course .location-course__content-wrap .location-course__item {
+    margin-bottom: 20px;
   }
 }
-.location-course .location-course__content-wrap .location-course__location .location--text {
-  font-family: "Helvetica regular";
-  font-size: 16px;
+.location-course .location-course__content-wrap .location-course__item .location-course__item--icon {
+  height: 40px;
+  height: auto;
+  margin: auto;
+}
+.location-course .location-course__content-wrap .location-course__item .location-course__item--icon img {
+  width: 100%;
+}
+.location-course .location-course__content-wrap .location-course__item .location-course__item--content > .content__title {
+  font-family: "Helvetica medium";
+  font-size: 24px;
+  line-height: 36px;
+  font-weight: 400;
+  color: #f88008;
+  text-align: center;
+}
+.location-course .location-course__content-wrap .location-course__item .location-course__item--content > .content__subtitle {
+  height: 80px;
+  font-family: "Helvetica medium";
+  font-size: 18px;
   line-height: 28px;
   font-weight: 400;
   color: #333333;
+  text-align: center;
 }
-@media screen and (min-width: 310px) and (max-width: 768px) {
-  .location-course .location-course__content-wrap .location-course__location .location--text {
-    font-size: 14px;
-  }
+.location-course .location-course__content-wrap .location-course__item .location-course__item--content > .content__subtitle span {
+  white-space: nowrap;
 }
 
 .library-course {
