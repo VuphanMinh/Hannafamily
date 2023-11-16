@@ -1,4 +1,5 @@
 $orange: #f88008;
+$orange-light: #d78f05;
 $yellow: #f7cf38;
 $jade: #02b9cd;
 $jade-dark: #026C93;
@@ -6,6 +7,9 @@ $jade-black: #004068;
 $white: #ffffff;
 $black: #000000;
 $grey: #333333;
+$red: #d2172a;
+$red-light: #d56d60;
+$blue: #010176;
 
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=STIX+Two+Text:wght@400;500;600&display=swap');
@@ -89,6 +93,10 @@ body {
     height: 100%;
 }
 
+section {
+    overflow-x: hidden;
+}
+
 // =============== button ===============
 
 #button-top {
@@ -148,6 +156,14 @@ body {
         background-color: $jade;
     }
 
+    &.btn-contact--black {
+        background-color: $black;
+    }
+
+    &.btn-contact--red {
+        background-color: $red;
+    }
+
     @include res_for(sp) {  
         width: 120px;
         height: 40px;
@@ -182,14 +198,20 @@ body {
     
     .slide-wrap__img {
         width: 100%;
-        height: auto;
-        // overflow-y: hidden;
-        object-fit: contain;
+        height: 1080px;
+        overflow-y: hidden;
+        object-fit: cover;
+        object-position: 50% 50%;
         margin-bottom: 80px;
+
+        @include res_for(sp) {  
+            height: auto;
+        }
 
         img {
             width: 100%;
             height: auto;
+            object-position: 50% 50%;
         }
     }
 }
@@ -231,6 +253,10 @@ body {
             font-weight: 400;
             color: $jade-dark;
             margin-bottom: 20px;
+
+            &.title--red {
+                color: $red;
+            }
 
             @include res_for(sp) {  
                 font-size: 40px;
@@ -292,6 +318,10 @@ body {
             font-weight: 400;
             color: $orange;
             margin-bottom: 20px;
+
+            &.title--orange-light {
+                color: $orange-light;
+            }
         }
 
         .name-course__content--content {
@@ -308,10 +338,31 @@ body {
                 color: $grey;
                 margin-bottom: 100px;
 
+                &.content--bottom {
+                    margin-bottom: 10px;
+                    margin-top: 100px;
+                }
+
                 @include res_for(sp) {  
                     margin-bottom: 40px;
                 }
             }
+        }
+    }
+
+    .name-course__img {
+        width: 100%;
+        height: 877px;
+        overflow-y: hidden;
+        object-fit: contain;
+
+        @include res_for(sp) {  
+            height: auto;
+            margin-top: 20px;
+        }
+
+        img {
+            width: 100%;
         }
     }
 
@@ -372,6 +423,34 @@ body {
         @include res_for(sp) {  
             margin-top: 80px;
         } 
+    }
+
+    .quality-course__img-wrap {
+        display: flex;
+        justify-content: end;
+        align-items: flex-end;
+        margin-top: 6vw;
+
+        @include res_for(sp) {  
+            margin-top: 1vw;
+        } 
+
+        .quality-course__img-bottom {
+            width: 400px;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    .quality-course__img {
+        width: 100%;
+        object-fit: contain;
+
+        img {
+            width: 100%;
+        }
     }
 
     .quality-course__img-style {
@@ -444,6 +523,10 @@ body {
         justify-content: end;
         flex-direction: column;
 
+        &.content--spacing {
+            margin-top: 40px;
+        }
+
         @include res_for(sp) {  
             margin-top: 150px;
         } 
@@ -456,6 +539,10 @@ body {
             color: $orange;
             text-align: right;
             margin-bottom: 20px;
+
+            &.title--red {
+                color: $red;
+            }
         }
 
         .quality-course__content--content {
@@ -538,6 +625,10 @@ body {
             color: $grey;
             z-index: 2;
             margin-top: 10px;
+
+            &.title--illus {
+                color: $white;
+            }
         }
 
         .detail-course__background {
@@ -549,6 +640,21 @@ body {
             background-color: $yellow;
             padding: 20px;
             z-index: 0;
+
+            @include res_for(sp) {  
+                width: 100%;
+                height: 140px;
+            }
+
+            &.background--orange {
+                background-color: $orange;
+                color: $white;
+            }
+
+            &.background--orange-light {
+                background-color: $orange-light;
+                color: $white;
+            }
 
             @include res_for(sp) {  
                 width: 100%;
@@ -629,6 +735,10 @@ body {
             font-weight: 400;
             color: $orange;
             margin-bottom: 8px;
+
+            &.title-orange-light {
+                color: $orange-light;
+            }
         }
 
         .content--subtitle {
@@ -638,6 +748,10 @@ body {
             font-weight: 400;
             color: $orange;
             margin-bottom: 60px;
+
+            &.subtitle-orange-light {
+                color: $orange-light;
+            }
         }
 
         .content__list-reason {
@@ -691,10 +805,130 @@ body {
     .reason-course__img {
         width: 100%;
         object-fit: cover;
+
+        @include res_for(sp) {  
+            margin-bottom: 20px;
+        }
         
         img {
             width: 100%;
             height: auto;
+        }
+    }
+}
+
+.brand-course {
+    position: relative;
+
+    .brand-course__wrap-background {
+        margin-bottom: 60px;
+
+        @include res_for(sp) {  
+            margin-bottom: 30px;
+        }
+
+        .brand-course__title {
+            position: relative;
+            font-family: "Anton";
+            font-size: 50px;
+            line-height: 62px;
+            color: $grey;
+            z-index: 2;
+            margin-top: 10px;
+
+            &.title--illus {
+                color: $white;
+            }
+        }
+
+        .brand-course__background {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 40%;
+            height: 80px;
+            background-color: $yellow;
+            padding: 20px;
+            z-index: 0;
+
+            &.background--orange {
+                background-color: $orange;
+                color: $white;
+            }
+
+            @include res_for(sp) {  
+                width: 100%;
+            }
+        }
+    }
+
+    .brand-course__img {
+        width: 100%;
+        height: 550px;
+        overflow-y: hidden;
+        object-fit: cover;
+
+        @include res_for(sp) {  
+            width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+
+        &.img--first {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+
+            @include res_for(sp) {  
+                width: 100%;
+                height: auto;
+                margin-top: 20px;
+            }
+
+            img {
+                height: 300px;
+
+                @include res_for(sp) {  
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+
+        &.img--second {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: flex;
+            align-items: flex-end;
+            margin-top: 30px;
+
+            @include res_for(sp) {  
+                width: 100%;
+                height: auto;
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+
+            img {
+                height: 220px;
+
+                @include res_for(sp) {  
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+
+        img {
+            width: 100%;
+            height: 550px;  
+
+            @include res_for(sp) {  
+                width: 100%;
+                height: auto;
+                margin-top: 20px;
+            }
         }
     }
 }
@@ -736,6 +970,17 @@ body {
         z-index: 0;
     }
 
+    .timeline-course__bg-left {
+        position: absolute;
+        top: 60%;
+        left: 0;
+        transform: translate(0, -50%);
+        width: 25px;
+        height: 560px;
+        background-color: $orange;
+        z-index: 0;
+    }
+
     .timeline-course__wrap-img {
         .timeline-course__img {
             width: 100%;
@@ -749,10 +994,23 @@ body {
             img {
                 width: 80%;
                 height: auto;
+
+                &.img-illus {
+                    width: 100%;
+                }
             }
         }
     }
 
+    .timeline-course__title {
+        font-family: "Anton";
+        font-size: 60px;
+        line-height: 76px;
+        font-weight: 400;
+        color: $blue;
+        margin-bottom: 40px;
+    }
+    
     .timeline-course__content {
         .timeline-course__content--title {
             font-family: "Anton";
@@ -782,12 +1040,17 @@ body {
         width: 70%;
         font-family: 'Anton';
         font-size: 44px;
-        line-height: 52px;
+        line-height: 58px;
         font-weight: 400;
         color: $orange;
         text-align: center;
         margin: auto;
         margin-bottom: 80px;
+
+        &.title-illus {
+            width: 80%;
+            color: $grey;
+        }
     }
 
     .application-course__item {
@@ -835,6 +1098,10 @@ body {
     position: relative;
     margin-bottom: 120px;
 
+    @include res_for(sp) {  
+        overflow-x: hidden;
+    }
+
     .location-course__bg {
         position: absolute;
         top: 50%;
@@ -846,6 +1113,10 @@ body {
         background-size: cover;
         background-position: center;
         z-index: 0;
+
+        &.bg-25-percent {
+            width: 25%;
+        }
 
         @include res_for(sp) {  
             width: 25%;
@@ -865,6 +1136,69 @@ body {
         & > img {
             width: 80%;
             height: auto;
+        }
+    }
+
+    .location-course__img-style {
+        width: 100%;
+        display: flex;
+        align-items: flex-end;
+        
+        .img-style__wrap {
+            display: flex;
+            align-items: flex-end;
+            justify-content: end;
+            flex-direction: column;
+            margin-right: 16px;
+
+            .img-style__first {
+                width: 130px;
+                // height: 210px;
+                overflow-y: hidden;
+                object-fit: cover;
+                margin-bottom: 16px;
+
+                @include res_for(sp) {  
+                    width: 80px;
+                }
+
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+
+            .img-style__second {
+                width: 270px;
+                // height: 370px;
+                overflow-y: hidden;
+                object-fit: cover;
+
+                @include res_for(sp) {  
+                    width: 160px;
+                }
+
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+
+        .img-style__main {
+            width: 100%;
+            // height: 800px;
+            // overflow-y: hidden;
+            object-fit: contain;
+
+            img {
+                // width: 100%;
+                height: 600px;
+
+                @include res_for(sp) {  
+                    width: 350px;
+                }
+            }
         }
     }
 
@@ -943,6 +1277,11 @@ body {
         display: flex;
         align-items: center;
     }
+
+    .library-course--end {
+        display: flex;
+        align-items: end;
+    }
     
     .library-course__img {
         width: 100%;
@@ -951,6 +1290,10 @@ body {
         & > img {
             width: 100%;
             height: auto;
+        }
+
+        &.library-course__bottom {
+            margin-bottom: 30px;
         }
 
         &.library-course__end {
@@ -967,5 +1310,54 @@ body {
     & > img {
         width: 100%;
         height: auto;
+    }
+}
+
+.student-course {
+    margin-bottom: 80px;
+
+    @include res_for(sp) {  
+        margin-bottom: 40px;
+    }
+
+    .student-course--end {
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .student-course--bottom {
+        margin-bottom: 20px;
+    }
+
+    .student-course__title {
+        font-family: 'Anton';
+        font-size: 98px;
+        line-height: 108px;
+        font-weight: 400;
+        color: $orange;
+        white-space: nowrap;
+        margin-bottom: 20px;
+
+        &.title--red-light {
+            color: $red-light;
+        }
+
+        @include res_for(sp) {  
+            font-size: 48px;
+            line-height: 58px;
+        }
+    }
+
+    .student-course__img {
+        width: 100%;
+        object-fit: contain;
+
+        @include res_for(sp) {  
+            margin-bottom: 20px;
+        }
+
+        img {
+            width: 100%;
+        }
     }
 }
