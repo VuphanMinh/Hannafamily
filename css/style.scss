@@ -1,5 +1,5 @@
 $orange: #f88008;
-$orange-light: #d78f05;
+$orange-light: #eda400;
 $yellow: #f7cf38;
 $jade: #02b9cd;
 $jade-dark: #026C93;
@@ -67,6 +67,10 @@ $breakpoints: (
 
 .p-0 {
     padding: 0;
+}
+
+.mb-80 {
+    margin-bottom: 80px;
 }
 
 .mb-120 {
@@ -169,6 +173,10 @@ section {
 
     &.btn-contact--yellow {
         background-color: $yellow;
+    }
+
+    &.btn-contact--orange-light {
+        background-color: $orange-light;
     }
 
     @include res_for(sp) {  
@@ -367,6 +375,11 @@ section {
                 @include res_for(sp) {  
                     margin-bottom: 40px;
                 }
+            }
+
+            &.content--full-width {
+                width: 100%;
+                margin-bottom: 20px;
             }
         }
     }
@@ -1017,6 +1030,10 @@ section {
         height: 560px;
         background-color: $orange;
         z-index: 0;
+
+        &.d-none-mobile {
+            display: none;
+        }
     }
 
     .timeline-course__wrap-img {
@@ -1047,6 +1064,10 @@ section {
         font-weight: 400;
         color: $blue;
         margin-bottom: 40px;
+
+        &.title--red {
+            color: $red;
+        }
     }
     
     .timeline-course__content {
@@ -1122,6 +1143,10 @@ section {
                 font-weight: 400;
                 color: $orange;
                 text-align: center;
+
+                &.title--orange-light {
+                    color: $orange-light;
+                }
             }
 
             & > .content__subtitle {
@@ -1162,10 +1187,28 @@ section {
             width: 25%;
         }
 
+        &.bg-WCL {
+            width: 5%;
+            background-color: $orange;
+        }
+
         @include res_for(sp) {  
             width: 25%;
             height: 389px;
         }
+    }
+
+    .location-course__bg-WCL {
+        position: absolute;
+        top: 80%;
+        left: 0;
+        transform: translate(0, -50%);
+        width: 5%;
+        height: 220px;
+        background-color: $orange;
+        background-size: cover;
+        background-position: center;
+        z-index: 0;
     }
 
     .location-course--vertical {
@@ -1180,6 +1223,10 @@ section {
         & > img {
             width: 80%;
             height: auto;
+
+            &.location-course__img--WCL {
+                width: 100%;
+            }
         }
     }
 
@@ -1402,6 +1449,286 @@ section {
 
         img {
             width: 100%;
+        }
+    }
+}
+
+
+.redirect-course {
+    margin-bottom: 80px;
+
+    .redirect-course__img-wrap {
+        display: flex;
+        justify-content: end;
+        align-items: flex-end;
+        margin-top: 6vw;
+
+        @include res_for(sp) {  
+            margin-top: 1vw;
+        } 
+
+        .redirect-course__img-bottom {
+            width: 400px;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    .redirect-course__img {
+        width: 100%;
+        object-fit: contain;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .redirect-course__img-style {
+        display: flex;
+        align-items: end;
+        
+        .redirect-course__img--first {
+            width: 283px;
+            height: 520px;
+            object-fit: cover;
+            margin-right: 80px;
+
+            @include res_for(sp) { 
+                width: auto; 
+                height: 250px;
+                margin-right: 20px;
+            } 
+
+            & > img {
+                height: 520px;
+
+                @include res_for(sp) {  
+                    height: 250px;
+                } 
+            }
+        }
+
+        .redirect-course__img--second {
+            width: 183px;
+            height: 200px;
+            object-fit: cover;
+            flex-shrink: 1;
+            margin-bottom: -80px;
+            margin-left: -50px;
+            margin-right: 10px;
+
+            @include res_for(sp) {  
+                height: 150px;
+                margin-left: -100px;
+            } 
+
+            & > img {
+                height: 200px;
+
+                @include res_for(sp) {  
+                    height: 150px;
+                } 
+            }
+        }
+
+        .redirect-course__img--third {
+            width: 220px;
+            height: 350px;
+            object-fit: cover;
+
+            @include res_for(sp) {  
+                height: 250px;
+            } 
+
+            & > img {
+                height: 350px;
+
+                @include res_for(sp) {  
+                    height: 250px;
+                } 
+            }
+        }
+    }
+
+    .redirect-course__content {
+        display: flex;
+        justify-content: end;
+        flex-direction: column;
+
+        &.content--spacing {
+            margin-top: 40px;
+        }
+
+        @include res_for(sp) {  
+            margin-top: 150px;
+        } 
+
+        .redirect-course__content--title {
+            font-family: 'Anton';
+            font-size: 60px;
+            line-height: 76px;
+            font-weight: 400;
+            color: $brown;
+            text-align: right;
+            margin-bottom: 20px;
+
+            &.title--red {
+                color: $red;
+            }
+        }
+
+        .redirect-course__content--content {
+            font-family: 'Helvetica bold';
+            width: auto;
+            font-size: 24px;
+            line-height: 32px;
+            color: $grey;
+            text-align: right;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.detail-img-course {
+    margin-bottom: 80px;
+
+    .detail-img-course__img {
+        width: 100%;
+        height: 240px;
+        overflow-y: hidden;
+        object-position: center;
+        object-fit: cover;
+        margin-bottom: 30px;
+
+        @include res_for(sp) { 
+            width: 100%;
+        }
+
+        & > img {
+            width: 100%;
+            height: auto;
+
+            @include res_for(sp) { 
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}
+
+.img-lib-course {
+    margin-bottom: 80px;
+
+    .img-lib-course__img {
+        width: 100%;
+        height: 520px;
+        overflow-y: hidden;
+        object-fit: cover;
+        object-position: center;
+
+        @include res_for(sp) { 
+            height: auto;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+.from-students-course {
+    position: relative;
+    margin-bottom: 80px;
+
+    .from-students-course--end {
+        display: flex;
+        justify-content: end;
+    }
+
+    .from-students-course-flex-end {
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        position: static;
+    }
+
+    .from-students-course--bottom-20 {
+        margin-bottom: 20px;
+    }
+
+    .from-students-course__wrap-background {
+        margin-bottom: 60px;
+
+        .from-students-course__title {
+            position: relative;
+            font-family: "Anton";
+            font-size: 50px;
+            line-height: 62px;
+            color: $grey;
+            z-index: 2;
+            margin-top: 10px;
+
+            &.title--illus {
+                color: $white;
+            }
+        }
+
+        .from-students-course__background {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 38%;
+            height: 80px;
+            background-color: $yellow;
+            padding: 20px;
+            z-index: 0;
+
+            @include res_for(sp) {  
+                width: 100%;
+                height: 80px;
+            }
+
+            &.background--orange {
+                background-color: $orange;
+                color: $white;
+            }
+
+            &.background--orange-light {
+                background-color: $orange-light;
+                color: $white;
+            }
+
+            @include res_for(sp) {  
+                width: 100%;
+            }
+        }
+    }
+
+    .from-students-course__img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        object-position: center;
+
+        &.img--bottom {
+            width: 410px;
+            height: auto;
+            overflow-y: hidden;
+            object-fit: cover;
+            object-position: center;
+
+            & > img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        & > img {
+            width: 100%;
+            height: auto;
         }
     }
 }
