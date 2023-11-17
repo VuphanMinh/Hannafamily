@@ -87,14 +87,16 @@ html {
 }
 
 body {
-    font-family: 'Helvetica regular', sans-serif;
+    font-family: 'Helvetica Bold', sans-serif;
     overflow-x: hidden;
     position: relative;
     height: 100%;
 }
 
 section {
-    overflow-x: hidden;
+    @include res_for(sp) { 
+        overflow-x: hidden;
+    }
 }
 
 // =============== button ===============
@@ -162,6 +164,10 @@ section {
 
     &.btn-contact--red {
         background-color: $red;
+    }
+
+    &.btn-contact--yellow {
+        background-color: $yellow;
     }
 
     @include res_for(sp) {  
@@ -248,8 +254,8 @@ section {
     .topic-course__content {
         .topic-course__content--title {
             font-family: 'Anton';
-            font-size: 60px;
-            line-height: 76px;
+            font-size: 52px;
+            line-height: 68px;
             font-weight: 400;
             color: $jade-dark;
             margin-bottom: 20px;
@@ -267,8 +273,8 @@ section {
 
         .topic-course__content--subtitle {
             font-family: 'Helvetica Bold';
-            font-size: 48px;
-            line-height: 58px;
+            font-size: 38px;
+            line-height: 48px;
             font-weight: 700;
             color: $jade-black;
             margin-bottom: 20px;
@@ -282,13 +288,18 @@ section {
 
         .topic-course__content--content {
             width: auto;
-            font-size: 19px;
+            font-size: 18px;
             line-height: 22px;
             font-weight: 700;
             color: $white;
-            background-color: $orange;
+            background-color: $orange-light;
             white-space: nowrap;
             margin-bottom: 8px;
+            padding: 4px;
+
+            &.content-width {
+                width: 72%;
+            }
 
             @include res_for(sp) {  
                 font-size: 13px;
@@ -325,11 +336,16 @@ section {
         }
 
         .name-course__content--content {
-            width: auto;
+            font-family: 'Helvetica Bold';
+            width: 380px;
             font-size: 20px;
             line-height: 28px;
             color: $grey;
             margin-bottom: 8px;
+
+            @include res_for(sp) {  
+                width: 100%;
+            }
 
             &.content--large {
                 font-family: 'Helvetica bold';
@@ -415,6 +431,7 @@ section {
 
 .quality-course {
     margin-bottom: 80px;
+
     .quality-course__slide--wrap {
         display: flex;
         align-items: center;
@@ -459,7 +476,7 @@ section {
         
         .quality-course__img--first {
             width: 283px;
-            height: 400px;
+            height: 520px;
             object-fit: cover;
             margin-right: 16px;
 
@@ -468,7 +485,7 @@ section {
             } 
 
             & > img {
-                height: 400px;
+                height: 520px;
 
                 @include res_for(sp) {  
                     height: 250px;
@@ -482,7 +499,7 @@ section {
             object-fit: cover;
             flex-shrink: 1;
             margin-bottom: -80px;
-            margin-left: -120px;
+            margin-left: -50px;
             margin-right: 10px;
 
             @include res_for(sp) {  
@@ -533,8 +550,8 @@ section {
 
         .quality-course__content--title {
             font-family: 'Anton';
-            font-size: 50px;
-            line-height: 56px;
+            font-size: 60px;
+            line-height: 76px;
             font-weight: 400;
             color: $orange;
             text-align: right;
@@ -548,8 +565,8 @@ section {
         .quality-course__content--content {
             font-family: 'Helvetica bold';
             width: auto;
-            font-size: 20px;
-            line-height: 28px;
+            font-size: 24px;
+            line-height: 32px;
             color: $grey;
             text-align: right;
             margin-bottom: 20px;
@@ -558,17 +575,22 @@ section {
 
     .slide--left {
         display: flex;
-        justify-content: flex-start;
+        justify-content: flex-end;
+    }
+
+    .slide--center {
+        display: flex;
+        justify-content: center;
     }
 
     .slide--right {
         display: flex;
-        justify-content: flex-end;
+        justify-content: flex-start;
     }
 
     .quality-course__slide {
-        width: 290px;
-        height: 410px;
+        // width: 290px;
+        height: 440px;
         object-fit: cover;
 
         @include res_for(sp) {  
@@ -578,7 +600,7 @@ section {
         } 
 
         & > img {
-            height: 410px;
+            height: 440px;
 
             @include res_for(sp) {  
                 width: 100%;
@@ -599,6 +621,7 @@ section {
             }
 
             & > img {
+                width: 100%;
                 height: 486px;
 
                 @include res_for(sp) {  
@@ -784,18 +807,21 @@ section {
                         height: 60px; 
                         font-size: 38px;
                         line-height: 42px;
+                        margin-right: 10px;
                     }
                 }
 
                 .item__reason {
                     font-family: "UTM Avo";
-                    font-size: 26px;
-                    line-height: 34px;
+                    font-size: 20px;
+                    line-height: 32px;
                     color: $grey;
+                    white-space: nowrap;
 
                     @include res_for(sp) {  
-                        font-size: 18px;
+                        font-size: 16px;
                         line-height: 26px;
+                        white-space: break-spaces;
                     }
                 }
             }
@@ -856,6 +882,11 @@ section {
                 color: $white;
             }
 
+            &.background--orange-light {
+                background-color: $orange-light;
+                color: $white;
+            }
+
             @include res_for(sp) {  
                 width: 100%;
             }
@@ -864,7 +895,7 @@ section {
 
     .brand-course__img {
         width: 100%;
-        height: 550px;
+        height: 465px;
         overflow-y: hidden;
         object-fit: cover;
 
@@ -874,10 +905,23 @@ section {
             margin-top: 20px;
         }
 
+        img {
+            width: 100%;
+            height: auto;
+
+            @include res_for(sp) {  
+                width: 100%;
+                height: auto;
+                margin-top: 20px;
+            }
+        }
+
         &.img--first {
-            width: 300px;
-            height: 300px;
+            width: 250px;
+            height: 250px;
+            overflow: hidden;
             object-fit: cover;
+            object-position: center;
 
             @include res_for(sp) {  
                 width: 100%;
@@ -897,11 +941,11 @@ section {
 
         &.img--second {
             width: 100%;
-            height: 220px;
+            height: 200px;
+            overflow: hidden;
             object-fit: cover;
-            display: flex;
-            align-items: flex-end;
-            margin-top: 30px;
+            object-position: top;
+            margin-top: 20px;
 
             @include res_for(sp) {  
                 width: 100%;
@@ -917,17 +961,6 @@ section {
                     width: 100%;
                     height: auto;
                 }
-            }
-        }
-
-        img {
-            width: 100%;
-            height: 550px;  
-
-            @include res_for(sp) {  
-                width: 100%;
-                height: auto;
-                margin-top: 20px;
             }
         }
     }
@@ -1054,17 +1087,20 @@ section {
     }
 
     .application-course__item {
-        height: 220px;
+        height: 300px;
         display: flex;
-        justify-content: center;
+        justify-content: end;
         align-items: center;
         flex-direction: column;
-        margin-bottom: 40px;
+        margin-bottom: 20px;
+
+        @include res_for(sp) {  
+            height: auto;
+        }
 
         .application-course__item--icon {
-            height: 40px;
-            height: auto;
             margin: auto;
+            margin-bottom: 20px;
 
             img {
                 width: 100%;
@@ -1072,6 +1108,8 @@ section {
         }
 
         .application-course__item--content {
+            height: 144px;
+
             & > .content__title {
                 font-family: 'Helvetica medium';
                 font-size: 24px;
@@ -1108,8 +1146,9 @@ section {
         right: 0;
         transform: translate(0, -50%);
         width: 45%;
+        height: 680px;
         height: 689px;
-        background-image: url('../img/images/bg-timeline.png');
+        background-color: $orange-light;
         background-size: cover;
         background-position: center;
         z-index: 0;
@@ -1331,8 +1370,8 @@ section {
 
     .student-course__title {
         font-family: 'Anton';
-        font-size: 98px;
-        line-height: 108px;
+        font-size: 90px;
+        line-height: 102px;
         font-weight: 400;
         color: $orange;
         white-space: nowrap;

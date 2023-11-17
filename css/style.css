@@ -44,14 +44,16 @@ html {
 }
 
 body {
-  font-family: "Helvetica regular", sans-serif;
+  font-family: "Helvetica Bold", sans-serif;
   overflow-x: hidden;
   position: relative;
   height: 100%;
 }
 
-section {
-  overflow-x: hidden;
+@media screen and (min-width: 310px) and (max-width: 768px) {
+  section {
+    overflow-x: hidden;
+  }
 }
 
 #button-top {
@@ -110,6 +112,9 @@ section {
 }
 .btn-contact.btn-contact--red {
   background-color: #d2172a;
+}
+.btn-contact.btn-contact--yellow {
+  background-color: #f7cf38;
 }
 @media screen and (min-width: 310px) and (max-width: 768px) {
   .btn-contact {
@@ -194,8 +199,8 @@ section {
 }
 .topic-course .topic-course__content .topic-course__content--title {
   font-family: "Anton";
-  font-size: 60px;
-  line-height: 76px;
+  font-size: 52px;
+  line-height: 68px;
   font-weight: 400;
   color: #026C93;
   margin-bottom: 20px;
@@ -212,8 +217,8 @@ section {
 }
 .topic-course .topic-course__content .topic-course__content--subtitle {
   font-family: "Helvetica Bold";
-  font-size: 48px;
-  line-height: 58px;
+  font-size: 38px;
+  line-height: 48px;
   font-weight: 700;
   color: #004068;
   margin-bottom: 20px;
@@ -227,13 +232,17 @@ section {
 }
 .topic-course .topic-course__content .topic-course__content--content {
   width: auto;
-  font-size: 19px;
+  font-size: 18px;
   line-height: 22px;
   font-weight: 700;
   color: #ffffff;
-  background-color: #f88008;
+  background-color: #d78f05;
   white-space: nowrap;
   margin-bottom: 8px;
+  padding: 4px;
+}
+.topic-course .topic-course__content .topic-course__content--content.content-width {
+  width: 72%;
 }
 @media screen and (min-width: 310px) and (max-width: 768px) {
   .topic-course .topic-course__content .topic-course__content--content {
@@ -266,11 +275,17 @@ section {
   color: #d78f05;
 }
 .name-course .name-course__content .name-course__content--content {
-  width: auto;
+  font-family: "Helvetica Bold";
+  width: 380px;
   font-size: 20px;
   line-height: 28px;
   color: #333333;
   margin-bottom: 8px;
+}
+@media screen and (min-width: 310px) and (max-width: 768px) {
+  .name-course .name-course__content .name-course__content--content {
+    width: 100%;
+  }
 }
 .name-course .name-course__content .name-course__content--content.content--large {
   font-family: "Helvetica bold";
@@ -397,7 +412,7 @@ section {
 }
 .quality-course .quality-course__img-style .quality-course__img--first {
   width: 283px;
-  height: 400px;
+  height: 520px;
   -o-object-fit: cover;
      object-fit: cover;
   margin-right: 16px;
@@ -408,7 +423,7 @@ section {
   }
 }
 .quality-course .quality-course__img-style .quality-course__img--first > img {
-  height: 400px;
+  height: 520px;
 }
 @media screen and (min-width: 310px) and (max-width: 768px) {
   .quality-course .quality-course__img-style .quality-course__img--first > img {
@@ -422,7 +437,7 @@ section {
      object-fit: cover;
   flex-shrink: 1;
   margin-bottom: -80px;
-  margin-left: -120px;
+  margin-left: -50px;
   margin-right: 10px;
 }
 @media screen and (min-width: 310px) and (max-width: 768px) {
@@ -473,8 +488,8 @@ section {
 }
 .quality-course .quality-course__content .quality-course__content--title {
   font-family: "Anton";
-  font-size: 50px;
-  line-height: 56px;
+  font-size: 60px;
+  line-height: 76px;
   font-weight: 400;
   color: #f88008;
   text-align: right;
@@ -486,23 +501,26 @@ section {
 .quality-course .quality-course__content .quality-course__content--content {
   font-family: "Helvetica bold";
   width: auto;
-  font-size: 20px;
-  line-height: 28px;
+  font-size: 24px;
+  line-height: 32px;
   color: #333333;
   text-align: right;
   margin-bottom: 20px;
 }
 .quality-course .slide--left {
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
+}
+.quality-course .slide--center {
+  display: flex;
+  justify-content: center;
 }
 .quality-course .slide--right {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 .quality-course .quality-course__slide {
-  width: 290px;
-  height: 410px;
+  height: 440px;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -514,7 +532,7 @@ section {
   }
 }
 .quality-course .quality-course__slide > img {
-  height: 410px;
+  height: 440px;
 }
 @media screen and (min-width: 310px) and (max-width: 768px) {
   .quality-course .quality-course__slide > img {
@@ -537,6 +555,7 @@ section {
   }
 }
 .quality-course .quality-course__slide.quality-course__slide--large > img {
+  width: 100%;
   height: 486px;
 }
 @media screen and (min-width: 310px) and (max-width: 768px) {
@@ -705,18 +724,21 @@ section {
     height: 60px;
     font-size: 38px;
     line-height: 42px;
+    margin-right: 10px;
   }
 }
 .reason-course .reason-course__content .content__list-reason li.content__list-reason--item .item__reason {
   font-family: "UTM Avo";
-  font-size: 26px;
-  line-height: 34px;
+  font-size: 20px;
+  line-height: 32px;
   color: #333333;
+  white-space: nowrap;
 }
 @media screen and (min-width: 310px) and (max-width: 768px) {
   .reason-course .reason-course__content .content__list-reason li.content__list-reason--item .item__reason {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 26px;
+    white-space: break-spaces;
   }
 }
 .reason-course .reason-course__img {
@@ -771,6 +793,10 @@ section {
   background-color: #f88008;
   color: #ffffff;
 }
+.brand-course .brand-course__wrap-background .brand-course__background.background--orange-light {
+  background-color: #d78f05;
+  color: #ffffff;
+}
 @media screen and (min-width: 310px) and (max-width: 768px) {
   .brand-course .brand-course__wrap-background .brand-course__background {
     width: 100%;
@@ -778,7 +804,7 @@ section {
 }
 .brand-course .brand-course__img {
   width: 100%;
-  height: 550px;
+  height: 465px;
   overflow-y: hidden;
   -o-object-fit: cover;
      object-fit: cover;
@@ -790,11 +816,25 @@ section {
     margin-top: 20px;
   }
 }
+.brand-course .brand-course__img img {
+  width: 100%;
+  height: auto;
+}
+@media screen and (min-width: 310px) and (max-width: 768px) {
+  .brand-course .brand-course__img img {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+  }
+}
 .brand-course .brand-course__img.img--first {
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
+  overflow: hidden;
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 @media screen and (min-width: 310px) and (max-width: 768px) {
   .brand-course .brand-course__img.img--first {
@@ -814,12 +854,13 @@ section {
 }
 .brand-course .brand-course__img.img--second {
   width: 100%;
-  height: 220px;
+  height: 200px;
+  overflow: hidden;
   -o-object-fit: cover;
      object-fit: cover;
-  display: flex;
-  align-items: flex-end;
-  margin-top: 30px;
+  -o-object-position: top;
+     object-position: top;
+  margin-top: 20px;
 }
 @media screen and (min-width: 310px) and (max-width: 768px) {
   .brand-course .brand-course__img.img--second {
@@ -836,17 +877,6 @@ section {
   .brand-course .brand-course__img.img--second img {
     width: 100%;
     height: auto;
-  }
-}
-.brand-course .brand-course__img img {
-  width: 100%;
-  height: 550px;
-}
-@media screen and (min-width: 310px) and (max-width: 768px) {
-  .brand-course .brand-course__img img {
-    width: 100%;
-    height: auto;
-    margin-top: 20px;
   }
 }
 
@@ -956,20 +986,27 @@ section {
   color: #333333;
 }
 .application-course .application-course__item {
-  height: 220px;
+  height: 300px;
   display: flex;
-  justify-content: center;
+  justify-content: end;
   align-items: center;
   flex-direction: column;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 310px) and (max-width: 768px) {
+  .application-course .application-course__item {
+    height: auto;
+  }
 }
 .application-course .application-course__item .application-course__item--icon {
-  height: 40px;
-  height: auto;
   margin: auto;
+  margin-bottom: 20px;
 }
 .application-course .application-course__item .application-course__item--icon img {
   width: 100%;
+}
+.application-course .application-course__item .application-course__item--content {
+  height: 144px;
 }
 .application-course .application-course__item .application-course__item--content > .content__title {
   font-family: "Helvetica medium";
@@ -1004,8 +1041,9 @@ section {
   right: 0;
   transform: translate(0, -50%);
   width: 45%;
+  height: 680px;
   height: 689px;
-  background-image: url("../img/images/bg-timeline.png");
+  background-color: #d78f05;
   background-size: cover;
   background-position: center;
   z-index: 0;
@@ -1200,8 +1238,8 @@ section {
 }
 .student-course .student-course__title {
   font-family: "Anton";
-  font-size: 98px;
-  line-height: 108px;
+  font-size: 90px;
+  line-height: 102px;
   font-weight: 400;
   color: #f88008;
   white-space: nowrap;
