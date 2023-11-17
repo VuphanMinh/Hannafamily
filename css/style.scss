@@ -10,6 +10,7 @@ $grey: #333333;
 $red: #d2172a;
 $red-light: #d56d60;
 $blue: #010176;
+$brown: #bc4c25;
 
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=STIX+Two+Text:wght@400;500;600&display=swap');
@@ -262,6 +263,10 @@ section {
 
             &.title--red {
                 color: $red;
+            }
+
+            &.title--brown {
+                color: $brown;
             }
 
             @include res_for(sp) {  

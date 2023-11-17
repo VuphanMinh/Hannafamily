@@ -208,6 +208,9 @@ body {
 .topic-course .topic-course__content .topic-course__content--title.title--red {
   color: #d2172a;
 }
+.topic-course .topic-course__content .topic-course__content--title.title--brown {
+  color: #bc4c25;
+}
 @media screen and (min-width: 310px) and (max-width: 768px) {
   .topic-course .topic-course__content .topic-course__content--title {
     font-size: 40px;
