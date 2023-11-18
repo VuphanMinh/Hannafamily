@@ -241,7 +241,7 @@ body {
   }
 }
 .topic-course .topic-course__content .topic-course__content--content {
-  width: auto;
+  width: 115%;
   font-size: 18px;
   line-height: 22px;
   font-weight: 700;
@@ -256,7 +256,8 @@ body {
 }
 @media screen and (min-width: 310px) and (max-width: 768px) {
   .topic-course .topic-course__content .topic-course__content--content {
-    font-size: 13px;
+    width: 110%;
+    font-size: 11px;
     line-height: 18px;
   }
 }

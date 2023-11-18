@@ -300,7 +300,7 @@ section {
         }
 
         .topic-course__content--content {
-            width: auto;
+            width: 115%;
             font-size: 18px;
             line-height: 22px;
             font-weight: 700;
@@ -315,7 +315,8 @@ section {
             }
 
             @include res_for(sp) {  
-                font-size: 13px;
+                width: 110%;
+                font-size: 11px;
                 line-height: 18px;
             } 
         }
